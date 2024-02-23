@@ -1,0 +1,231 @@
+Now listening on: https://localhost:7082
+Now listening on: http://localhost:5165
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: D:\MAIN\2024\programming\Pet\Smart\SmartApp\
+An unhandled exception has occurred while executing the request.
+Now listening on: https://localhost:7082
+Now listening on: http://localhost:5165
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: D:\MAIN\2024\programming\Pet\Smart\SmartApp\
+An unhandled exception has occurred while executing the request.
+Now listening on: https://localhost:7082
+Now listening on: http://localhost:5165
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: D:\MAIN\2024\programming\Pet\Smart\SmartApp\
+An unhandled exception has occurred while executing the request.
+Now listening on: https://localhost:7082
+Now listening on: http://localhost:5165
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: D:\MAIN\2024\programming\Pet\Smart\SmartApp\
+An unhandled exception has occurred while executing the request.
+Now listening on: https://localhost:7082
+Now listening on: http://localhost:5165
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: D:\MAIN\2024\programming\Pet\Smart\SmartApp\
+An unhandled exception has occurred while executing the request.
+An unhandled exception has occurred while executing the request.
+An unhandled exception has occurred while executing the request.
+An unhandled exception has occurred while executing the request.
+Now listening on: https://localhost:7082
+Now listening on: http://localhost:5165
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: D:\MAIN\2024\programming\Pet\Smart\SmartApp\
+An unhandled exception has occurred while executing the request.
+An unhandled exception has occurred while executing the request.
+Now listening on: https://localhost:7082
+Now listening on: http://localhost:5165
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: D:\MAIN\2024\programming\Pet\Smart\SmartApp\
+An unhandled exception has occurred while executing the request.
+Now listening on: https://localhost:7082
+Now listening on: http://localhost:5165
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: D:\MAIN\2024\programming\Pet\Smart\SmartApp\
+An unhandled exception has occurred while executing the request.
+An unhandled exception has occurred while executing the request.
+Now listening on: https://localhost:7082
+Now listening on: http://localhost:5165
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: D:\MAIN\2024\programming\Pet\Smart\SmartApp\
+An unhandled exception has occurred while executing the request.
+Now listening on: https://localhost:7082
+Now listening on: http://localhost:5165
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: D:\MAIN\2024\programming\Pet\Smart\SmartApp\
+An unhandled exception has occurred while executing the request.
+An unhandled exception has occurred while executing the request.
+Now listening on: https://localhost:7082
+Now listening on: http://localhost:5165
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: D:\MAIN\2024\programming\Pet\Smart\SmartApp\
+An unhandled exception has occurred while executing the request.
+An unhandled exception has occurred while executing the request.
+Now listening on: https://localhost:7082
+Now listening on: http://localhost:5165
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: D:\MAIN\2024\programming\Pet\Smart\SmartApp\
+An unhandled exception has occurred while executing the request.
+Now listening on: https://localhost:7082
+Now listening on: http://localhost:5165
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: D:\MAIN\2024\programming\Pet\Smart\SmartApp\
+An unhandled exception has occurred while executing the request.
+An unhandled exception has occurred while executing the request.
+Now listening on: https://localhost:7082
+Now listening on: http://localhost:5165
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: D:\MAIN\2024\programming\Pet\Smart\SmartApp\
+An unhandled exception has occurred while executing the request.
+Path: /DownloadComments Start time: 22:34:18
+Now listening on: https://localhost:7082
+Now listening on: http://localhost:5165
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: D:\MAIN\2024\programming\Pet\Smart\SmartApp\
+An unhandled exception has occurred while executing the request.
+Path: /DownloadComments Start time: 22:40:35
+Now listening on: https://localhost:7082
+Now listening on: http://localhost:5165
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: D:\MAIN\2024\programming\Pet\Smart\SmartApp\
+An unhandled exception has occurred while executing the request.
+Path: /GetComments/ Start time: 23:06:53
+Now listening on: https://localhost:7082
+Now listening on: http://localhost:5165
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: D:\MAIN\2024\programming\Pet\Smart\SmartApp\
+An unhandled exception has occurred while executing the request.
+Path: /GetComments/ Start time: 23:09:19
+Now listening on: https://localhost:7082
+Now listening on: http://localhost:5165
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: D:\MAIN\2024\programming\Pet\Smart\SmartApp\
+An unhandled exception has occurred while executing the request.
+Path: /GetComments/ Start time: 23:11:25
+Path: /GetComments/tema987 Start time: 23:12:29
+Now listening on: https://localhost:7082
+Now listening on: http://localhost:5165
+Application started. Press Ctrl+C to shut down.
+Hosting environment: Development
+Content root path: D:\MAIN\2024\programming\Pet\Smart\SmartApp\
+An unhandled exception has occurred while executing the request.
+Path: /GetComments/ Start time: 23:13:20
+Path: /GetComments/tema987 Start time: 23:13:23
+An unhandled exception has occurred while executing the request.
+An unhandled exception has occurred while executing the request.
+An unhandled exception has occurred while executing the request.
+An unhandled exception has occurred while executing the request.
+An unhandled exception has occurred while executing the request.
+An unhandled exception has occurred while executing the request.
+An unhandled exception has occurred while executing the request.
+An unhandled exception has occurred while executing the request.
+An unhandled exception has occurred while executing the request.
+An unhandled exception has occurred while executing the request.
+An unhandled exception has occurred while executing the request.
+An unhandled exception has occurred while executing the request.
+An unhandled exception has occurred while executing the request.
+An unhandled exception has occurred while executing the request.
+An unhandled exception has occurred while executing the request.
+An unhandled exception has occurred while executing the request.
+An unhandled exception has occurred while executing the request.
+An unhandled exception has occurred while executing the request.
+An unhandled exception has occurred while executing the request.
+An unhandled exception has occurred while executing the request.
+An unhandled exception has occurred while executing the request.
+An unhandled exception has occurred while executing the request.
+An unhandled exception has occurred while executing the request.
+An unhandled exception has occurred while executing the request.
+An unhandled exception has occurred while executing the request.
+An unhandled exception has occurred while executing the request.
+An unhandled exception has occurred while executing the request.
+An unhandled exception has occurred while executing the request.
+An unhandled exception has occurred while executing the request.
+An unhandled exception has occurred while executing the request.
+An unhandled exception has occurred while executing the request.
+An unhandled exception has occurred while executing the request.
+An unhandled exception has occurred while executing the request.
+An unhandled exception has occurred while executing the request.
+An unhandled exception has occurred while executing the request.
+An unhandled exception has occurred while executing the request.
+An unhandled exception has occurred while executing the request.
+An unhandled exception has occurred while executing the request.
+An unhandled exception has occurred while executing the request.
+An unhandled exception has occurred while executing the request.
+An unhandled exception has occurred while executing the request.
+An unhandled exception has occurred while executing the request.
+An unhandled exception has occurred while executing the request.
+An unhandled exception has occurred while executing the request.
+An unhandled exception has occurred while executing the request.
+An unhandled exception has occurred while executing the request.
+An unhandled exception has occurred while executing the request.
+An unhandled exception has occurred while executing the request.
+An unhandled exception has occurred while executing the request.
+An unhandled exception has occurred while executing the request.
+An unhandled exception has occurred while executing the request.
+An unhandled exception has occurred while executing the request.
+An unhandled exception has occurred while executing the request.
+An unhandled exception has occurred while executing the request.
+An unhandled exception has occurred while executing the request.
+An unhandled exception has occurred while executing the request.
+An unhandled exception has occurred while executing the request.
+An unhandled exception has occurred while executing the request.
+An unhandled exception has occurred while executing the request.
+An unhandled exception has occurred while executing the request.
+An unhandled exception has occurred while executing the request.
+An unhandled exception has occurred while executing the request.
+An unhandled exception has occurred while executing the request.
+An unhandled exception has occurred while executing the request.
+An unhandled exception has occurred while executing the request.
+An unhandled exception has occurred while executing the request.
+An unhandled exception has occurred while executing the request.
+An unhandled exception has occurred while executing the request.
+An unhandled exception has occurred while executing the request.
+An unhandled exception has occurred while executing the request.
+An unhandled exception has occurred while executing the request.
+An unhandled exception has occurred while executing the request.
+An unhandled exception has occurred while executing the request.
+An unhandled exception has occurred while executing the request.
+An unhandled exception has occurred while executing the request.
+An unhandled exception has occurred while executing the request.
+An unhandled exception has occurred while executing the request.
+An unhandled exception has occurred while executing the request.
+An unhandled exception has occurred while executing the request.
+An unhandled exception has occurred while executing the request.
+An unhandled exception has occurred while executing the request.
+An unhandled exception has occurred while executing the request.
+An unhandled exception has occurred while executing the request.
+An unhandled exception has occurred while executing the request.
+An unhandled exception has occurred while executing the request.
+An unhandled exception has occurred while executing the request.
+An unhandled exception has occurred while executing the request.
+An unhandled exception has occurred while executing the request.
+An unhandled exception has occurred while executing the request.
+An unhandled exception has occurred while executing the request.
+An unhandled exception has occurred while executing the request.
+An unhandled exception has occurred while executing the request.
+An unhandled exception has occurred while executing the request.
+An unhandled exception has occurred while executing the request.
+An unhandled exception has occurred while executing the request.
+An unhandled exception has occurred while executing the request.
+An unhandled exception has occurred while executing the request.
+An unhandled exception has occurred while executing the request.
+An unhandled exception has occurred while executing the request.
+An unhandled exception has occurred while executing the request.
+An unhandled exception has occurred while executing the request.

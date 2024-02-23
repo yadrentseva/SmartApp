@@ -1,16 +1,25 @@
 ﻿using Microsoft.Extensions.FileSystemGlobbing;
 using SmartApp.Controllers;
+using System.Threading;
 
 namespace SmartApp.Models
 {
     public class LoadingService : IHostedService
     {
-        Parser parser;
-        public LoadingService()
+        ParserController parser;
+        public LoadingService(ILogger<ParserController> _logger, SmartConfig _smartConfig)
         {
-            parser = new Parser();
+           parser = new ParserController(_logger, _smartConfig); // todo
         }
         public async Task StartAsync(CancellationToken cancellationToken)
+        {
+            await Task.Run(() =>
+            {
+                RunLoad(cancellationToken);
+            });
+        }
+
+        async Task RunLoad(CancellationToken cancellationToken)
         {
             while (!cancellationToken.IsCancellationRequested)
             {
@@ -25,6 +34,7 @@ namespace SmartApp.Models
                 await Task.Delay(600000, cancellationToken);
             }
         }
+
         private async Task DownloadCommentsAsync()
         {
             await parser.DownloadComments();
