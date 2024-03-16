@@ -1,14 +1,13 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SmartApp.Models
 {
-    public class Author
+    public class AuthorsModel
     {
-        [Key]
-        [Column("profile")]
+        [Required]
         public string Profile { get; set; }
-        [Column("name")]
+        
+        [Required]
         public string Name { get; set; }
     }
 }

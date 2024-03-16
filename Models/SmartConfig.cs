@@ -2,8 +2,9 @@
 {
     public class SmartConfig
     {
-        public string ConnectionString { get; set; }
-        public int WaitingTimeLoading { get; set; }
+        public SmartDBConnection smartDBConnection { get; set; }
+
+        public RabbitMQSettings rabbitMQSettings { get; set; }
 
     }
 }
