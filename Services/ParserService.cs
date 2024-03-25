@@ -2,8 +2,6 @@
 using Microsoft.Extensions.Options;
 using Npgsql;
 using SmartApp.Models;
-using System.Net.Http;
-using System.Xml.Linq;
 
 namespace SmartApp.Services
 {

@@ -9,18 +9,18 @@ using SmartApp.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer(); 
 builder.Services.AddSwaggerGen();
 
+
 builder.Services.AddScoped<IAuthorsService, AuthorsService>();
+builder.Services.AddScoped<IRatingService, RatingService>();
 builder.Services.AddScoped<IBlackListService, BlackListService>();
 builder.Services.AddScoped<IParserService, ParserService>();
 builder.Services.AddSingleton<IRabbitMqService, RabbitMqService>();
-builder.Services.AddHostedService<RabbitMqListener>(); 
- 
+
+builder.Services.AddHostedService<RabbitMqListener>();  
 builder.Services.AddHostedService<LoadingService>();
 
 builder.Host.UseSerilog((hostBuilderContext, loggerConfiguration) =>
@@ -40,8 +40,13 @@ builder.Services.Configure<RabbitMQSettings>(builder.Configuration.GetSection("R
 var messageHandlerRegistrator = new MessageHandlerRegistrator(builder.Services.BuildServiceProvider());
 messageHandlerRegistrator.Register("DataUpdateRequest", typeof(LoadingCommentsHandler));
 messageHandlerRegistrator.Register("DataUpdateRequest", typeof(LogginLoadCommentsDBHandler));
-// messageHandlerRegistrator.Register("DataUpdateRequest", typeof(LogginLoadCommentsDBHandler));
-builder.Services.AddSingleton(messageHandlerRegistrator);
+messageHandlerRegistrator.Register("RatingUpdateRequest", typeof(LoadingRatingHandler)); 
+builder.Services.AddSingleton(messageHandlerRegistrator); 
+
+builder.Services.AddStackExchangeRedisCache(options => {
+    options.Configuration = "localhost";
+    options.InstanceName = "local";
+});
 
 var app = builder.Build();
 
@@ -59,4 +64,3 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.Run();
-

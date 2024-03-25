@@ -10,11 +10,13 @@ namespace SmartApp.Controllers
     {
         private readonly ILogger<AuthorsController> _logger;
         private readonly IAuthorsService _authorsService;
+        private readonly IRatingService _ratingService;
 
-        public AuthorsController(ILogger<AuthorsController> logger, IAuthorsService authorsService)
+        public AuthorsController(ILogger<AuthorsController> logger, IAuthorsService authorsService, IRatingService ratingService)
         {
             _logger = logger;
             _authorsService = authorsService;
+            _ratingService = ratingService; 
         }
 
         [HttpPost]
@@ -36,10 +38,19 @@ namespace SmartApp.Controllers
         }
 
         [HttpGet("{profile}")]
-        public async Task<IActionResult> GetByProfile(string profile) // todo заменить на модель
+        public async Task<IActionResult> GetByProfile(string profile)
         {
             var author = await _authorsService.GetByProfileAsync(profile);
             if (author != null) return Ok(author);
+
+            return NotFound();
+        }
+
+        [HttpGet("rating/{profile}")]
+        public async Task<IActionResult> GetRatingByProfile(string profile)
+        {
+            var rating = await _ratingService.GetAuthorsRatingAsync(profile);
+            if (rating != null) return Ok(rating);
 
             return NotFound();
         }
@@ -54,11 +65,11 @@ namespace SmartApp.Controllers
         }
 
         [HttpDelete("{profile}")]
-        public async Task<IActionResult> Delete(string profile) // todo заменить на модель 
+        public async Task<IActionResult> Delete(string profile) 
         {
             await _authorsService.DeleteAsync(profile);
             return Ok(new { message = "Author deleted" });
-        } 
+        }
 
     }
 }

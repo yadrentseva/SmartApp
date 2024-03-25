@@ -20,6 +20,7 @@ namespace SmartApp.Controllers
             var comments = await _parserService.GetCommentsAsync(profile);
             return Ok(comments);
         }
+         
     }  
 }
 

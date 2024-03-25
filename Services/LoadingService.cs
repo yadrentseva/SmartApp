@@ -25,7 +25,8 @@ namespace SmartApp.Services
             while (!cancellationToken.IsCancellationRequested)
             {
                 var info = new InfoLoadingService() { TimeRequest = DateTime.Now, User = "veronika" };
-                _mqService.SendMessage("DataUpdateRequest", info);
+                // _mqService.SendMessage("DataUpdateRequest", info);
+                _mqService.SendMessage("RatingUpdateRequest", info);
 
                 await Task.Delay(100000, cancellationToken);
             }

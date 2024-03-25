@@ -9,6 +9,7 @@ namespace SmartApp.Models
         [Column("profile")]
         public string Profile { get; set; }
         [Column("name")]
-        public string Name { get; set; }
+        public string? Name { get; set; }
+        public Rating? Rating { get; set; }
     }
 }

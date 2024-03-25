@@ -1,5 +1,4 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using SmartApp.Models;
+﻿using SmartApp.Models;
 
 namespace SmartApp.Services
 {

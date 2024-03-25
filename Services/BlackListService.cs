@@ -15,49 +15,49 @@ namespace SmartApp.Services
 
         public async Task AddAsync(AuthorsModel authorsModel)
         { 
-            using (ApplicationContext db = new ApplicationContext(_smartDBConnectionAccessor))
+            using (SmartContext dbContext = new SmartContext(_smartDBConnectionAccessor))
             {
-                var author = await db.authors.FindAsync(authorsModel.Profile);
+                var author = await dbContext.authors.FindAsync(authorsModel.Profile);
                 if (author == null)
                 {
-                    await db.authors.AddAsync(new Author() { Profile = authorsModel.Profile, Name = authorsModel.Name});
-                    await db.SaveChangesAsync();
+                    await dbContext.authors.AddAsync(new Author() { Profile = authorsModel.Profile, Name = authorsModel.Name});
+                    await dbContext.SaveChangesAsync();
                 }
 
-                var authorBL = await db.blacklist.FindAsync(authorsModel.Profile);
+                var authorBL = await dbContext.blacklist.FindAsync(authorsModel.Profile);
                 if (authorBL == null)
                 {
-                    await db.blacklist.AddAsync(new BlackList() { Authorprofile = authorsModel.Profile });
-                    await db.SaveChangesAsync();
+                    await dbContext.blacklist.AddAsync(new BlackList() { Authorprofile = authorsModel.Profile });
+                    await dbContext.SaveChangesAsync();
                 }                 
             } 
         }
 
         public async Task DeleteAsync(string profile)
         {
-            using (ApplicationContext db = new ApplicationContext(_smartDBConnectionAccessor))
+            using (SmartContext dbContext = new SmartContext(_smartDBConnectionAccessor))
             {
-                var authorBL = await db.blacklist.FindAsync(profile);
+                var authorBL = await dbContext.blacklist.FindAsync(profile);
                 if (authorBL != null)
-                    db.blacklist.Remove(authorBL);
-                    await db.SaveChangesAsync();
+                    dbContext.blacklist.Remove(authorBL);
+                    await dbContext.SaveChangesAsync();
             }
         }
 
         public async Task<List<BlackList>> GetAllAsync()
         {
-            using (ApplicationContext db = new ApplicationContext(_smartDBConnectionAccessor))
+            using (SmartContext dbContext = new SmartContext(_smartDBConnectionAccessor))
             {
-                var authorsBL = await db.blacklist.ToListAsync();
+                var authorsBL = await dbContext.blacklist.ToListAsync();
                 return authorsBL; 
             }
         }
 
         public async Task<Boolean> InBlackList(string profile)
         {
-            using (ApplicationContext db = new ApplicationContext(_smartDBConnectionAccessor))
+            using (SmartContext dbContext = new SmartContext(_smartDBConnectionAccessor))
             {
-                var authorBL = await db.blacklist.FindAsync(profile);
+                var authorBL = await dbContext.blacklist.FindAsync(profile);
                 return authorBL != null;
             }
         }
