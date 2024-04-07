@@ -1,7 +1,6 @@
 ﻿using MediatR;
 using SmartApp.Commands;
 using SmartApp.Models;
-using SmartApp.Query;
 
 namespace SmartApp.Handlers.CQRS
 {

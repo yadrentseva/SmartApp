@@ -1,7 +1,6 @@
 ﻿using MediatR;
 using SmartApp.Models;
 using SmartApp.Query;
-using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 
 namespace SmartApp.Handlers.CQRS
 {

@@ -1,11 +1,8 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using SmartApp.Commands;
-using SmartApp.Handlers.CQRS;
 using SmartApp.Models;
 using SmartApp.Query;
-using SmartApp.Services;
-using System.Xml.Linq;
 
 
 namespace SmartApp.Controllers

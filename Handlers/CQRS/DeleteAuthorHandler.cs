@@ -1,8 +1,6 @@
-﻿using Elasticsearch.Net;
-using MediatR;
+﻿using MediatR;
 using SmartApp.Commands;
 using SmartApp.Models;
-using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 
 namespace SmartApp.Handlers.CQRS
 {
