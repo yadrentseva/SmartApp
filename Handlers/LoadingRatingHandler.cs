@@ -14,7 +14,7 @@ namespace SmartApp.Handlers
         }
         public async Task Handle(string body)
         {
-            var updateRatingService = new UpdateAuthorRatingService(_smartDBConnectionAccessor);
+            var updateRatingService = new UpdateAuthorRatingService(_smartDBConnectionAccessor, new SmartlabData());
 
             await updateRatingService.LoadAuthorRatingFromSmartlabAsync(); 
         }

@@ -6,6 +6,8 @@ using SmartApp.Handlers;
 using SmartApp.Models;
 using SmartApp.RabbitMQ;
 using SmartApp.Services;
+using System.Reflection;
+using MediatR;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -13,15 +15,18 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer(); 
 builder.Services.AddSwaggerGen();
 
-
 builder.Services.AddScoped<IAuthorsService, AuthorsService>();
 builder.Services.AddScoped<IRatingService, RatingService>();
 builder.Services.AddScoped<IBlackListService, BlackListService>();
 builder.Services.AddScoped<IParserService, ParserService>();
 builder.Services.AddSingleton<IRabbitMqService, RabbitMqService>();
 
+builder.Services.AddScoped<IAuthorRepository, AuthorRepository>();
+
 builder.Services.AddHostedService<RabbitMqListener>();  
 builder.Services.AddHostedService<LoadingService>();
+
+builder.Services.AddMediatR(Assembly.GetExecutingAssembly());
 
 builder.Host.UseSerilog((hostBuilderContext, loggerConfiguration) =>
     loggerConfiguration

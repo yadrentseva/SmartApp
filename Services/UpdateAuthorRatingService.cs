@@ -1,17 +1,23 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 using SmartApp.Models;
-using System.Linq;
 
 namespace SmartApp.Services
 {
     public class UpdateAuthorRatingService
     {
         private readonly IOptions<SmartDBConnection> _smartDBConnectionAccessor;
+        private readonly IDataManager _dataManager; 
 
-        public UpdateAuthorRatingService(IOptions<SmartDBConnection> smartDBConnectionAccessor) 
+        public UpdateAuthorRatingService(IDataManager dataManager)
+        {
+            _dataManager = dataManager; 
+        }
+
+        public UpdateAuthorRatingService(IOptions<SmartDBConnection> smartDBConnectionAccessor, IDataManager dataManager)
         {
             _smartDBConnectionAccessor = smartDBConnectionAccessor;
+            _dataManager = dataManager; 
         }
 
         public async Task LoadAuthorRatingFromSmartlabAsync()
@@ -37,24 +43,20 @@ namespace SmartApp.Services
                     // _mqService.SendMessage("AddedNewAuthor", info);
                 }
 
-                if (context.rating.Count() != 0) 
+                if (context.rating.Count() != 0)
                     context.rating.RemoveRange(context.rating);
-                
+
                 await context.rating.AddRangeAsync(ratings);
 
                 await context.SaveChangesAsync();
             }
         }
 
-        private async Task<List<Rating>> RatingFromSmartlabAsync()
+        public async Task<List<Rating>> RatingFromSmartlabAsync()
         {
-            List<Rating> ratings= new List<Rating>();
+            List<Rating> ratings = new List<Rating>();
 
-            var httpClient = new HttpClient();
-
-            string coockie = "_ym_uid=1708319742604298880; _ym_d=1708319742; _count_uid=r1708319741879377osygkyzd1bo5rbtdwgenausb3mkikny4; _gid=GA1.2.1533132841.1711281772; _ym_isad=1; PHPSESSID=1f02e47116f70cf884f19dfc13c232fa; skey=ebf50ce3c97d3297be2243b6118567a4; _ga_CWV8L1544Z=GS1.1.1711380600.14.1.1711381625.0.0.0; _ga=GA1.2.2091564656.1708319742; _gat_gtag_UA_16537214_3=1";
-
-            httpClient.DefaultRequestHeaders.Add("cookie", coockie);
+            var pagesAuthorsRating = await _dataManager.GetRatingAuthorsAsync();
 
             string col_trader_other = "<a class=\"trader_other\" href=\"/profile/";
             string col_strength = "<td class=\"strength\">";
@@ -62,10 +64,8 @@ namespace SmartApp.Services
 
             int count = 1;
 
-            for (int i = 0; i < 10; i++)  
+            foreach (string pageRating in pagesAuthorsRating)
             {
-                var pageRating = await httpClient.GetStringAsync($"https://smart-lab.ru/people/all/order_by_change.rating/desc/page{i}/");
-
                 int startIndex = 0;
                 int endIndex = 0;
 
@@ -81,27 +81,27 @@ namespace SmartApp.Services
 
                 while (true)
                 {
-                    startIndex = pageRating.IndexOf(col_trader_other, endIndex);
-                    if (startIndex == -1) break;
-                    endIndex = pageRating.IndexOf("/\">", startIndex);
+                    if (pageRating.IndexOf(col_trader_other, endIndex) == -1) break;
 
-                    profile = pageRating.Substring(startIndex + col_trader_other.Length, endIndex - startIndex - col_trader_other.Length);
+                    startIndex = pageRating.IndexOf(col_trader_other, endIndex);
+                    endIndex = pageRating.IndexOf("/\">", startIndex);
+                    profile = pageRating.Substring(startIndex + col_trader_other.Length, endIndex - startIndex - col_trader_other.Length); 
 
                     startIndex = pageRating.IndexOf(col_strength, endIndex);
                     endIndex = pageRating.IndexOf("</td>", startIndex);
-                    Int32.TryParse(pageRating.Substring(startIndex + col_strength.Length, endIndex - startIndex - col_strength.Length), out forum);
+                    forum = GeneralClass.GetNumericFromText(pageRating, startIndex + col_strength.Length, endIndex);
 
                     startIndex = pageRating.IndexOf(col_rating, endIndex);
                     endIndex = pageRating.IndexOf("</strong></td>", startIndex);
-                    Int32.TryParse(pageRating.Substring(startIndex + col_rating.Length, endIndex - startIndex - col_rating.Length), out blog30Days);
+                    blog30Days = GeneralClass.GetNumericFromText(pageRating, startIndex + col_rating.Length, endIndex);
+                    
+                    startIndex = pageRating.IndexOf(col_strength, endIndex);
+                    endIndex = pageRating.IndexOf("</td>", startIndex);
+                    overallAllTime = GeneralClass.GetNumericFromText(pageRating, startIndex + col_strength.Length, endIndex); 
 
                     startIndex = pageRating.IndexOf(col_strength, endIndex);
                     endIndex = pageRating.IndexOf("</td>", startIndex);
-                    Int32.TryParse(pageRating.Substring(startIndex + col_strength.Length, endIndex - startIndex - col_strength.Length), out overallAllTime);
-
-                    startIndex = pageRating.IndexOf(col_strength, endIndex);
-                    endIndex = pageRating.IndexOf("</td>", startIndex);
-                    Int32.TryParse(pageRating.Substring(startIndex + col_strength.Length, endIndex - startIndex - col_strength.Length), out countReading);
+                    countReading = GeneralClass.GetNumericFromText(pageRating, startIndex + col_strength.Length, endIndex);
 
                     Rating rating = new Rating()
                     {
@@ -113,11 +113,11 @@ namespace SmartApp.Services
                         CountReading = countReading
                     };
                     ratings.Add(rating);
-                    count++; 
+                    count++;
                 }
             }
             return ratings;
-        }
+        } 
     }
 }
 
